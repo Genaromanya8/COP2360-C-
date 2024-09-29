@@ -1,0 +1,15 @@
+D:\College\C#\COP2360-C--1\bin\Debug\net8.0\COP2360-C--1.exe
+D:\College\C#\COP2360-C--1\bin\Debug\net8.0\COP2360-C--1.deps.json
+D:\College\C#\COP2360-C--1\bin\Debug\net8.0\COP2360-C--1.runtimeconfig.json
+D:\College\C#\COP2360-C--1\bin\Debug\net8.0\COP2360-C--1.dll
+D:\College\C#\COP2360-C--1\bin\Debug\net8.0\COP2360-C--1.pdb
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.GeneratedMSBuildEditorConfig.editorconfig
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.AssemblyInfoInputs.cache
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.AssemblyInfo.cs
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.csproj.CoreCompileInputs.cache
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.sourcelink.json
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.dll
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\refint\COP2360-C--1.dll
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.pdb
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\COP2360-C--1.genruntimeconfig.cache
+D:\College\C#\COP2360-C--1\obj\Debug\net8.0\ref\COP2360-C--1.dll
