@@ -59,8 +59,9 @@ class Program
     {
         return new Dictionary<string, List<string>>
         {
-            { "Fruit", new List<string> { "Apple", "Banana" } },
-            { "Vegetable", new List<string> { "Carrot", "Broccoli" } }
+            { "Sports", new List<string> { "Soccer", "Football", "Basketball", "Baseball", "Golf" } },
+             { "Country", new List<string> { "United States", "Cuba","Mexico", "Uruguay", "France" } },
+            { "Vegetable", new List<string> { "Carrot", "Broccoli", "Potatoe", "Spinach", "Eggplant" } }
         };
     }
     static void DisplayDictionaryContents(Dictionary<string, List<string>> dictionary)
