@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+
+class Contractor
+{
+    // Fields
+    public string ContractorName { get; set; }
+    public string ContractorNumber { get; set; }
+    public DateTime StartDate { get; set; }
+
+    // Constructor
+    public Contractor(string contractorName, string contractorNumber, DateTime startDate)
+    {
+        ContractorName = contractorName;
+        ContractorNumber = contractorNumber;
+        StartDate = startDate;
+    }
+
+    // Accessor/Mutator methods (optional because we're using auto-properties)
+    public string GetContractorName() => ContractorName;
+    public void SetContractorName(string contractorName) => ContractorName = contractorName;
+
+    public string GetContractorNumber() => ContractorNumber;
+    public void SetContractorNumber(string contractorNumber) => ContractorNumber = contractorNumber;
+
+    public DateTime GetStartDate() => StartDate;
+    public void SetStartDate(DateTime startDate) => StartDate = startDate;
+}
+
+class Subcontractor : Contractor
+{
+    // Additional fields for Subcontractor
+    public int Shift { get; set; }  // 1 for Day Shift, 2 for Night Shift
+    public double HourlyPayRate { get; set; }
+
+    // Constructor
+    public Subcontractor(string contractorName, string contractorNumber, DateTime startDate, int shift, double hourlyPayRate)
+        : base(contractorName, contractorNumber, startDate)
+    {
+        Shift = shift;
+        HourlyPayRate = hourlyPayRate;
+    }
+
+    // Method to calculate pay with shift differential
+    public float CalculatePay(int hoursWorked)
+    {
+        double pay = hoursWorked * HourlyPayRate;
+        if (Shift == 2) // Night Shift
+        {
+            pay += pay * 0.03; // 3% shift differential
+        }
+        return (float)pay;
+    }
+
+    // Accessor/Mutator methods for the new properties
+    public int GetShift() => Shift;
+    public void SetShift(int shift) => Shift = shift;
+
+    public double GetHourlyPayRate() => HourlyPayRate;
+    public void SetHourlyPayRate(double hourlyPayRate) => HourlyPayRate = hourlyPayRate;
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Subcontractor> subcontractors = new List<Subcontractor>();
+
+        while (true)
+        {
+            Console.WriteLine("Enter subcontractor details:");
+
+            // Collecting basic contractor details
+            Console.Write("Contractor Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Contractor Number: ");
+            string number = Console.ReadLine();
+
+            Console.Write("Contractor Start Date (MM/DD/YYYY): ");
+            DateTime startDate = DateTime.Parse(Console.ReadLine());
+
+            // Collecting subcontractor-specific details
+            Console.Write("Shift (1 for Day, 2 for Night): ");
+            int shift = int.Parse(Console.ReadLine());
+
+            Console.Write("Hourly Pay Rate: ");
+            double hourlyRate = double.Parse(Console.ReadLine());
+
+            // Create Subcontractor object
+            Subcontractor subcontractor = new Subcontractor(name, number, startDate, shift, hourlyRate);
+
+            // Ask for hours worked and calculate pay
+            Console.Write("Enter hours worked: ");
+            int hoursWorked = int.Parse(Console.ReadLine());
+
+            float pay = subcontractor.CalculatePay(hoursWorked);
+            Console.WriteLine($"Pay for {subcontractor.ContractorName}: ${pay}");
+
+            // Add subcontractor to list
+            subcontractors.Add(subcontractor);
+
+            // Ask if the user wants to add another subcontractor
+            Console.Write("Do you want to add another subcontractor? (y/n): ");
+            string response = Console.ReadLine();
+            if (response.ToLower() != "y")
+            {
+                break;
+            }
+        }
+
+        // Display all subcontractors' details
+        Console.WriteLine("\nSubcontractors List:");
+        foreach (var sub in subcontractors)
+        {
+            Console.WriteLine($"Name: {sub.ContractorName}, Number: {sub.ContractorNumber}, Start Date: {sub.StartDate.ToShortDateString()}, Shift: {(sub.Shift == 1 ? "Day" : "Night")}, Hourly Rate: {sub.HourlyPayRate}");
+        }
+    }
+}
